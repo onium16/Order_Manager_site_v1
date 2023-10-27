@@ -3,7 +3,6 @@
 @font-face {
     font-family: 'Manrope';
     src: url('/static/fonts/Manrope-Regular.ttf') format('truetype');
-
     font-weight: normal;
 }
 
@@ -14,7 +13,7 @@
     font-weight: bold;
 }
 
-/* Применение шрифта Manrope к всему сайту */
+/* шрифт Manrope */
 body {
     font-size: 24px;
     font-family: 'Manrope', sans-serif; /* Используйте 'sans-serif' как альтернативный шрифт, если Manrope недоступен */
@@ -22,13 +21,9 @@ body {
 
 .text-strike {
     text-decoration: line-through 2px red;
-      text-decoration-line: line-through;
-      text-decoration-style: solid;
-      text-decoration-color: red;
-      text-decoration-thickness: 2px;
   }
 
-  /* Ваши стили могут выглядеть следующим образом */
+
 .nav-container {
     display: flex; /* Используем flexbox для размещения элементов в одной строке */
     align-items: center; /* Выравниваем элементы по вертикали по центру */
@@ -42,20 +37,21 @@ body {
     white-space: nowrap; /* Запрещаем перенос текста для внутренних элементов */
 }
 
-
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Дополнительные стили, если необходимо */
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
+         align-items: center;
     }
 
     .navbar-toggler {
         margin-top: 10px; /* Настройте отступ сверху по вашему усмотрению */
+       
     }
 }
