@@ -23,7 +23,6 @@ body {
     text-decoration: line-through 2px red;
   }
 
-
 .nav-container {
     display: flex; /* Используем flexbox для размещения элементов в одной строке */
     align-items: center; /* Выравниваем элементы по вертикали по центру */
