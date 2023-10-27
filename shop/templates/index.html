@@ -11,30 +11,36 @@
 </head>
 <body>
     <!-- Header Section -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-light">  
+    {% comment %} <nav class="navbar navbar-expand-lg bg-body-tertiary">   {% endcomment %}
+        
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="media/logo.png"  alt="Onicorp" style="max-width: 40%; height: auto; text-align: center;"></a>
-            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon "></span>
-            </button>
-    
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" href="#"><img src="media/logo.png" alt="Onicorp" style="max-width: 40%; height: auto; text-align: center;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav ml-auto text-center">
                     <li class="nav-item"><a class="nav-link" href="#products">products</a></li>
                     <li class="nav-item"><a class="nav-link" href="#price">price</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">about</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacts">contacts</a></li>
-                    
-                    <a class="nav-item nav-link " style="margin: 0; padding: 5; white-space: nowrap;" href="#">en</a> <span style="padding: 5px;">|</span>  <a class="nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="#">ru</a>
+                    <div class="nav-container mx-auto">
+                        <a class="nav-item nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="#">en</a> 
+                        <span style="padding: 8px; color=grey"> | </span>  
+                        <a class="nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="#">ru</a>
+                    </div>    
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Second Logo Section -->
-    <section id="products" class="container_full second-logo text-center my-5">
+    <section id="big_logo" class="container_full second-logo text-center my-5">
         <div class="container d-flex justify-content-center">
-            <img src="./media/big_shot_logo.png" alt="Onicorp" style="max-width: 140%; height: auto;">
+            <img src="media/big_shot_logo.png" alt="Onicorp" style="max-width: 140%; height: auto;">
         </div>
     </section>
 
@@ -92,7 +98,7 @@
                             <td>{{product.currency_type}}</td>
                             <br>
                             <br>
-                            <button class="btn btn-warning">Buy</button>
+                            <button class="btn btn-warning" style="font-weight: bold">Buy</button>
                         </div>
                     </div>
                 </div>
