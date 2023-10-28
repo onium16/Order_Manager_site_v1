@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,11 @@
     <title>Onicorp Official Site</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
     {% load static %}
+    <script src="{% static 'js/language.js' %}"></script>
+
+    {% load i18n %}
+
+
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">    
 </head>
 <body>
@@ -23,15 +30,23 @@
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav ml-auto text-center">
-                    <li class="nav-item"><a class="nav-link" href="#products">products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#price">price</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">about</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacts">contacts</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="#products">{% trans "products" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#price">{% trans "price" %}</a></li>                    
+                    <li class="nav-item"><a class="nav-link" href="#about">{% trans "about" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacts">{% trans "contacts" %}</a></li>
                     <div class="nav-container mx-auto">
-                        <a class="nav-item nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="#">en</a> 
-                        <span style="padding: 8px; color=grey"> | </span>  
-                        <a class="nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="#">ru</a>
-                    </div>    
+                        <div class="nav-container mx-auto">
+                            <a class="nav-item nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="#" onclick="changeLanguage('en')">en</a>
+                            <span style="padding: 8px; color: grey"> | </span>
+                            <a class="nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="#" onclick="changeLanguage('ru')">ru</a>
+                        </div>
+                        
+{% comment %}           
+                        <a class="nav-item nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="{% url 'set_language' %}" method="post" type="submit" value="en" >en</a>
+                        <span style="padding: 8px; color: grey"> | </span>
+                        <a class="nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="{% url 'set_language' %}" method="post" type="submit" value="ru">ru</a> {% endcomment %}
+                    </div>                       
                 </ul>
             </div>
         </div>
@@ -47,29 +62,41 @@
     <!-- Products Section -->
     <section id="products" class="products  my-5">
         <div class="container text-center ">
-            <h2>products</h2>
+            <h2>{% trans "products" %}</h2>
             <span class="d-inline-block" style="max-width: 650px; font-size: 20px;">
-                <p>The Order Manager service generates order files from original images according to the provided list of articles.</p>
+                <p>{% trans "The Order Manager service generates order files from original images according to the provided list of articles." %}</p>
             </span>
             <div id="carouselExampleDark" class="carousel carousel-dark slide  my-4" data-bs-ride="carousel" data-bs-interval="2000">
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="1000">
-                        <img src="../static/media/1 slide.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2000">
-                        <img src="../static/media/2 slide.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../static/media/3 slide.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
-                    </div>
+                    {% if request.LANGUAGE_CODE == 'en' %}
+                        <div class="carousel-item active" data-bs-interval="1000">
+                            <img src="../static/media/1_slide_eng.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img src="../static/media/2_slide_eng.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../static/media/3_slide_eng.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
+                        </div>
+                    {% else %}
+                        <div class="carousel-item active" data-bs-interval="1000">
+                            <img src="../static/media/1_slide_ru.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img src="../static/media/2_slide_ru.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../static/media/3_slide_ru.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
+                        </div>
+                    {% endif %}
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                    {% comment %} <span class="visually-hidden">Previous</span> {% endcomment %}
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                    {% comment %} <span class="visually-hidden">Next</span> {% endcomment %}
                 </button>
             </div>
         </div>
@@ -79,16 +106,16 @@
     <!-- Price Section -->
     <section id="price" class="price my-5 ">
         <div class="container text-center ">
-            <h2>price</h2>
+            <h2>{% trans "price" %}</h2>
             <span class="d-inline-block" style="max-width: 650px; font-size: 20px;">
-                <p>Buy a subscription to Order Manager at current prices.</p>
+                <p>{% trans "Buy a subscription to Order Manager at current prices." %}</p>
             </span>
             <div class="row my-3">
                 {% for product in products %}
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="card mx-auto my-1" style="width: 14rem;">
                         <div class="card-body">
-                            <td><span class = "license-term" style="font-size: 30px; font-weight: bold">{{product.license_term}}</span></td>
+                            <td><span class = "license-term" style="font-size: 30px; font-weight: bold">{% trans product.license_term %}</span></td>
                             <br>
                             <br>
                             <td><span class="text-strike" style="font-size: 40px;">{{product.old_price}}</span></td>
@@ -98,7 +125,7 @@
                             <td>{{product.currency_type}}</td>
                             <br>
                             <br>
-                            <button class="btn btn-warning" style="font-weight: bold">Buy</button>
+                            <button class="btn btn-warning" style="font-weight: bold">{% trans "buy" %}</button>
                         </div>
                     </div>
                 </div>
@@ -111,10 +138,10 @@
     <!-- About Section -->
     <section id="about" class="about my-5">
         <div class="container text-center">
-            <h2>about</h2>
+            <h2>{% trans "about" %}</h2>
             <!-- Inline level -->
                 <span class="d-inline-block" style="max-width: 650px; font-size: 20px;">
-                    <p>A rapidly expanding company operates across over 20 countries in five regions spanning Europe and Asia. Our team is comprised of seasoned experts and professionals with over 12 years of experience in the IT industry.</p>
+                    <p>{% trans "We are a rapidly expanding company that operates in over 20 countries across five regions spanning Europe and Asia.Our team consists of seasoned experts and professionals with over 12 years of experience in the IT industry." %}</p>
                 </span>
         </div>
     </section>
@@ -122,7 +149,7 @@
     <!-- Contacts Section -->
     <section id="contacts" class="contacts my-5">
         <div class="container text-center">
-            <h2>contacts</h2>
+            <h2>{% trans "contacts" %}</h2>
             <!-- Inline level -->
                 <span class="d-inline-block" style="max-width: 650px; font-size: 20px;">
                     <p>e-mail: onicorp.tech@gmail.com</p>
@@ -137,8 +164,9 @@
                 <div >
                     onicorp.tech@gmail.com
                 </div>
-                <div >
+                <div>
                     onicorp<sup>©</sup>
+                </div>
             </div>
         </div>
     </section>

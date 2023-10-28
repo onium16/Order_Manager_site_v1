@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-28 02:11+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\shop\templates\index.html:35 .\shop\templates\index.html:67
+msgid "products"
+msgstr "продукты"
+
+#: .\shop\templates\index.html:36 .\shop\templates\index.html:113
+msgid "price"
+msgstr "цены"
+
+#: .\shop\templates\index.html:37 .\shop\templates\index.html:145
+msgid "about"
+msgstr "о нас"
+
+#: .\shop\templates\index.html:38 .\shop\templates\index.html:156
+msgid "contacts"
+msgstr "контакты"
+
+#: .\shop\templates\index.html:69
+msgid ""
+"The Order Manager service generates order files from original images "
+"according to the provided list of articles."
+msgstr ""
+"Служба «Order Manager» осуществляет формирование файлов заказа из "
+"оригинальных изображений согласно предоставленного списка артикулов."
+
+#: .\shop\templates\index.html:115
+msgid "Buy a subscription to Order Manager at current prices."
+msgstr "Приобретай подписку на Order Manager по актуальным ценам."
+
+#: .\shop\templates\index.html:132
+msgid "buy"
+msgstr "купить"
+
+#: .\shop\templates\index.html:148
+msgid ""
+"We are a rapidly expanding company that operates in over 20 countries across "
+"five regions spanning Europe and Asia.Our team consists of seasoned experts "
+"and professionals with over 12 years of experience in the IT industry."
+msgstr ""
+"Мы — быстрорастущая компания, оперирующая в более чем 20 странах пяти "
+"регионов, охватывающих Европу и Азию. Наша команда состоит из опытных "
+"экспертов и профессионалов с более чем 12-летним стажем работы в сфере "
+"информационных технологий."
+
+msgid "1 year"
+msgstr "1 год"
+
+msgid "1 month"
+msgstr "1 месяц"
+
+msgid "3 months"
+msgstr "3 месяца"
+
+msgid "6 months"
+msgstr "6 месяцев"
