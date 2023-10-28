@@ -20,6 +20,6 @@ from django.views.i18n import set_language
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('shop/', include('shop.urls')),  # Включите URL-схему вашего приложения
+    path('', include('shop.urls')),  # Включите URL-схему вашего приложения
     path("i18n/", include("django.conf.urls.i18n")),
 ]
