@@ -22,7 +22,7 @@ msgstr ""
 
 #: .\shop\templates\index.html:35 .\shop\templates\index.html:67
 msgid "products"
-msgstr "продукты"
+msgstr "программы и сервисы"
 
 #: .\shop\templates\index.html:36 .\shop\templates\index.html:113
 msgid "price"

@@ -48,10 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'base.urls'
@@ -120,8 +117,6 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-USE_TZ = True
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -139,7 +134,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-
+# COMMANDS FOR CREAT & management *.po files
 # COMMAND FOR CREATE *.PO  python manage.py makemessages -l ru --ignore=venv
 # python manage.py makemessages -a --ignore=venv
 # python manage.py compilemessages

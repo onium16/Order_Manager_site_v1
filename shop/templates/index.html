@@ -8,19 +8,15 @@
     <link rel="icon" href="../static/media/favicon.ico">
     <title>Onicorp Official Site</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    {% load i18n %}
     {% load static %}
     <script src="{% static 'js/language.js' %}"></script>
-
-    {% load i18n %}
-
-
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">    
 </head>
 <body>
+
     <!-- Header Section -->
     <nav class="navbar navbar-expand-lg bg-light">  
-    {% comment %} <nav class="navbar navbar-expand-lg bg-body-tertiary">   {% endcomment %}
-        
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <a class="navbar-brand" href="#"><img src="../static/media/logo.png" alt="Onicorp" style="max-width: 40%; height: auto; text-align: center;"></a>
@@ -30,7 +26,6 @@
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav ml-auto text-center">
-                    
                     <li class="nav-item"><a class="nav-link" href="#products">{% trans "products" %}</a></li>
                     <li class="nav-item"><a class="nav-link" href="#price">{% trans "price" %}</a></li>                    
                     <li class="nav-item"><a class="nav-link" href="#about">{% trans "about" %}</a></li>
@@ -41,11 +36,6 @@
                             <span style="padding: 8px; color: grey"> | </span>
                             <a class="nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="#" onclick="changeLanguage('ru')">ru</a>
                         </div>
-                        
-{% comment %}           
-                        <a class="nav-item nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="{% url 'set_language' %}" method="post" type="submit" value="en" >en</a>
-                        <span style="padding: 8px; color: grey"> | </span>
-                        <a class="nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="{% url 'set_language' %}" method="post" type="submit" value="ru">ru</a> {% endcomment %}
                     </div>                       
                 </ul>
             </div>
@@ -92,17 +82,14 @@
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    {% comment %} <span class="visually-hidden">Previous</span> {% endcomment %}
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    {% comment %} <span class="visually-hidden">Next</span> {% endcomment %}
                 </button>
             </div>
         </div>
     </section>
     
-
     <!-- Price Section -->
     <section id="price" class="price my-5 ">
         <div class="container text-center ">
@@ -157,6 +144,7 @@
         </div>
     </section>
     
+    <!-- Footer Section -->
     <section id="footer" class="footer my-5">
         <div class="container text-center border-line" style = "position: flex; top: 0; left: 0; width: 70%; height: 2px; background-color: black; z-index: 9999;"></div>
             <br>
