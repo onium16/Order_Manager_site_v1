@@ -11,8 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
+import json
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,14 +22,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-34&4)z@j)#5d$8)hg&9qfs+=a2t8)2j1q8ir2!j03vih7#psd&'
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+DB_HOST = config('DB_HOST')
+DB_USER = config('DB_USER')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='')
+if not ALLOWED_HOSTS:
+    ALLOWED_HOSTS = []
+else:
+    ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS.split(',') if ':' not in host]
 
-ALLOWED_HOSTS = []
-
+print(ALLOWED_HOSTS)
+print(type(ALLOWED_HOSTS))
 # Application definition
 
 INSTALLED_APPS = [
