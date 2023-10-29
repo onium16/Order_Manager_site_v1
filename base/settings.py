@@ -34,8 +34,7 @@ if not ALLOWED_HOSTS:
 else:
     ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS.split(',') if ':' not in host]
 
-print(ALLOWED_HOSTS)
-print(type(ALLOWED_HOSTS))
+
 # Application definition
 
 INSTALLED_APPS = [
