@@ -1,0 +1,7 @@
+
+PassengerAppRoot "/home/pozvpmwh/onicorp"
+PassengerBaseURI "/"
+PassengerPython "/home/pozvpmwh/virtualenv/onicorp/3.11/bin/python"
+PassengerAppLogFile "/home/pozvpmwh/onicorp/logs/logs.log"
+<IfModule Litespeed>
+</IfModule>

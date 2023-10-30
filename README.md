@@ -13,4 +13,4 @@ Order Manager for WB
 >
 >> author: SeriouS 
 >
->> email: onium16@gmail.com
+>> email: onicorp.tech@gmail.com
