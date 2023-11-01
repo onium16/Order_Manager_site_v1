@@ -19,11 +19,8 @@ from django.urls import path, include
 from django.views.i18n import set_language
 from django.conf.urls.i18n import *
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('shop.urls')),  # Включите URL-схему вашего приложения
     path("i18n/", include("django.conf.urls.i18n")),
 ]
-

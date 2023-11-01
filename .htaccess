@@ -19,9 +19,9 @@ PassengerAppLogFile "/home/pozvpmwh/onicorp.dev/logs/logs.log"
 SetEnv DB_HOST mydbhost
 SetEnv DB_USER mydbuser
 SetEnv DEBUG False
-SetEnv SECRET_KEY '______'
+SetEnv SECRET_KEY '______________'
 SetEnv ALLOWED_HOSTS *
 </IfModule>
 # DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
-RewriteCond %{HTTP_HOST} ^www\.onicorp\.dev$
-RewriteRule ^onicorp\.dev$ "https\:\/\/onicorp\.dev\/" [R=301,L]
+# RewriteCond %{HTTP_HOST} ^www\.onicorp\.dev$
+# RewriteRule ^onicorp\.dev$ "https\:\/\/onicorp\.dev\/" [R=301,L]

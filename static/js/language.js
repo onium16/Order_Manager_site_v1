@@ -3,7 +3,7 @@
 function changeLanguage(languageCode) {
     // Отправляем AJAX-запрос на сервер с выбранным языком
     var csrftoken = getCookie('csrftoken'); // Получаем CSRF-токен
-    console.log('CSRF Token:', csrftoken); // Выводим токен CSRF в консоль
+    // console.log('CSRF Token:', csrftoken); // Выводим токен CSRF в консоль, только тест!!!, при первой загрузке страницы вызывает ошибку из-за отсутствия csrftoken
 
     // Устанавливаем атрибуты SameSite и Secure для куки csrftoken
     document.cookie = 'csrftoken=' + csrftoken + '; path=/; SameSite=None; Secure';
@@ -31,6 +31,7 @@ function getCookie(name) {
             // Ищем куки с нужным именем
             if (cookie.substring(0, name.length + 1) === (name + '=')) {
                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                // console.log('cookieValue:', cookieValue); // Выводим токен CSRF в консоль
                 break;
             }
         }

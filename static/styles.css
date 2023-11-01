@@ -42,8 +42,7 @@ body {
     align-items: center;
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 790px) {
     .header-content {
         flex-direction: column;
          align-items: center;
@@ -53,4 +52,8 @@ body {
         margin-top: 10px; /* Настройте отступ сверху по вашему усмотрению */
        
     }
+      .nav-item {
+    display: inline-block; /* Отображать элементы в одной строке */
+    margin-right: 10px; /* Опциональное пространство между элементами */
+  }
 }

@@ -22,21 +22,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# ------------------- SERVER START ---------------------
-
-# SECRET_KEY = os.environ.get('SECRET_KEY')
-# DEBUG = os.environ.get('DEBUG', True)
-# DB_HOST = os.environ.get('DB_HOST')
-# DB_USER = os.environ.get('DB_USER')
-
-# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '')
-# if not ALLOWED_HOSTS:
-#     ALLOWED_HOSTS = []
-# else:
-#     ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS.split(',') if ':' not in host]
-
-# # ------------------- SERVER END---------------------
-
 # # ------------------- LOCAL START ---------------------
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=True, cast=bool)
@@ -52,7 +37,21 @@ else:
 
 # # ------------------- LOCAL END---------------------
 
-# Application definition
+
+# # ------------------- SERVER START ---------------------
+
+# SECRET_KEY = os.environ.get('SECRET_KEY')
+# DEBUG = os.environ.get('DEBUG', False)
+# DB_HOST = os.environ.get('DB_HOST')
+# DB_USER = os.environ.get('DB_USER')
+
+# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '')
+# if not ALLOWED_HOSTS:
+#     ALLOWED_HOSTS = []
+# else:
+#     ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS.split(',') if ':' not in host]
+
+# # ------------------- SERVER END---------------------
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -62,7 +61,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
-    # 'django.contrib.i18n',
 ]
 
 MIDDLEWARE = [
@@ -75,6 +73,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'base.urls'
@@ -97,9 +96,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'base.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -107,8 +103,6 @@ DATABASES = {
     }
 }
 
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -125,10 +119,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en'  # Язык по умолчанию
+LANGUAGE_CODE = 'ru'  # Язык по умолчанию
 
 LANGUAGES = [
     ('en', _('English')),
@@ -143,24 +135,18 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Media files
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Включить безопасные куки CSRF (рекомендуется для продакшн)
 CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_NAME = 'csrftoken'
 
 # COMMANDS FOR CREAT & management *.po files
 # COMMAND FOR CREATE *.PO  python manage.py makemessages -l ru --ignore=venv
