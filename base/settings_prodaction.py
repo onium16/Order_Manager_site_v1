@@ -6,7 +6,6 @@ from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # ------------------- SERVER START ---------------------
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -41,6 +40,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'base.urls'
@@ -103,9 +104,16 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Включить безопасные куки CSRF (рекомендуется для продакшн)
+CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_NAME = 'csrftoken'
+
+
