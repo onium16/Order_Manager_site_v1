@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
+    # 'django.contrib.i18n',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +74,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 ROOT_URLCONF = 'base.urls'
@@ -157,6 +159,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Включить безопасные куки CSRF (рекомендуется для продакшн)
+CSRF_COOKIE_SECURE = True
 
 # COMMANDS FOR CREAT & management *.po files
 # COMMAND FOR CREATE *.PO  python manage.py makemessages -l ru --ignore=venv

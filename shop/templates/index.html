@@ -1,166 +1,159 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../static/media/favicon.ico">
-    <title>Onicorp Official Site</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
-    {% load i18n %}
-    {% load static %}
-    <script src="{% static 'js/language.js' %}"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">    
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../static/media/favicon.ico">
+        <title>Onicorp Official Site</title>
+        <link rel="stylesheet" href="/static/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/styles.css">
+        {% load i18n %}
+        {% load static %}
+        <script src="/static/js/language.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
 
-    <!-- Header Section -->
-    <nav class="navbar navbar-expand-lg bg-light">  
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <a class="navbar-brand" href="#"><img src="../static/media/logo.png" alt="Onicorp" style="max-width: 40%; height: auto; text-align: center;"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav ml-auto text-center">
-                    <li class="nav-item"><a class="nav-link" href="#products">{% trans "products" %}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#price">{% trans "price" %}</a></li>                    
-                    <li class="nav-item"><a class="nav-link" href="#about">{% trans "about" %}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacts">{% trans "contacts" %}</a></li>
-                    <div class="nav-container mx-auto">
-                        <div class="nav-container mx-auto">
-                            <a class="nav-item nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="#" onclick="changeLanguage('en')">en</a>
-                            <span style="padding: 8px; color: grey"> | </span>
-                            <a class="nav-link" style="margin: 0; padding: 5; white-space: nowrap;" href="#" onclick="changeLanguage('ru')">ru</a>
-                        </div>
-                    </div>                       
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Second Logo Section -->
-    <section id="big_logo" class="container_full second-logo text-center my-5">
-        <div class="container d-flex justify-content-center">
-            <img src="../static/media/big_shot_logo.png" alt="Onicorp" style="max-width: 130%; height: auto;">
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="products  my-5">
-        <div class="container text-center ">
-            <h2>{% trans "products" %}</h2>
-            <span class="d-inline-block" style="max-width: 650px; font-size: 20px;">
-                <p>{% trans "The Order Manager service generates order files from original images according to the provided list of articles." %}</p>
-            </span>
-            <div id="carouselExampleDark" class="carousel carousel-dark slide  my-4" data-bs-ride="carousel" data-bs-interval="3000">
-                <div class="carousel-inner">
-                    {% if request.LANGUAGE_CODE == 'en' %}
-                        <div class="carousel-item active" data-bs-interval="1000">
-                            <img src="../static/media/1_slide_eng.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="2000">
-                            <img src="../static/media/2_slide_eng.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../static/media/3_slide_eng.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
-                        </div>
-                    {% else %}
-                        <div class="carousel-item active" data-bs-interval="1000">
-                            <img src="../static/media/1_slide_ru.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="2000">
-                            <img src="../static/media/2_slide_ru.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../static/media/3_slide_ru.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
-                        </div>
-                    {% endif %}
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </button>
-            </div>
-        </div>
-    </section>
+    </head>
+    <body>
     
-    <!-- Price Section -->
-    <section id="price" class="price my-5 ">
-        <div class="container text-center ">
-            <h2>{% trans "price" %}</h2>
-            <span class="d-inline-block" style="max-width: 650px; font-size: 20px;">
-                <p>{% trans "Buy a subscription to Order Manager at current prices." %}</p>
-            </span>
-            <div class="row my-3">
-                {% for product in products %}
-                <div class="col-lg-3 col-md-6 col-12">
-                    <div class="card mx-auto my-1" style="width: 14rem;">
-                        <div class="card-body">
-                            <td><span class = "license-term" style="font-size: 30px; font-weight: bold">{% trans product.license_term %}</span></td>
-                            <br>
-                            <br>
-                            <td><span class="text-strike" style="font-size: 40px;">{{product.old_price}}</span></td>
-                            <br>
-                            <td><span class = "product-price" style="font-size: 50px; font-weight: bold">{{product.price}}</span></td>
-                            <br>
-                            <td>{{product.currency_type}}</td>
-                            <br>
-                            <br>
-                            <button class="btn btn-warning" style="font-weight: bold">{% trans "buy" %}</button>
-                        </div>
+        <!-- Header Section -->
+        <nav class="navbar navbar-expand-lg bg-light">  
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <a class="navbar-brand" href="#"><img src="../static/media/logo.png" alt="Onicorp" style="max-width: 40%; height: auto; text-align: center;"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="justify-content: flex-end; font-size: 24px;">
+                    <div class="navbar-nav ml-auto text-center">
+                        <div class="nav-item"><a class="nav-link" href="#products">{% trans "products" %}</a></div>
+                        <div class="nav-item"><a class="nav-link" href="#price">{% trans "price" %}</a></div>
+                        <div class="nav-item"><a class="nav-link" href="#about">{% trans "about" %}</a></div>
+                        <div class="nav-item"><a class="nav-link" href="#contacts">{% trans "contacts" %}</a></div>
+                        <a class="nav-item nav-link" style="margin: 0;  white-space: nowrap;" href="#" onclick="changeLanguage('en')">en</a>
+                        <span style="padding: 8px; color: grey"> | </span>
+                        <a class="nav-link" style="margin: 0;  white-space: nowrap;" href="#" onclick="changeLanguage('ru')">ru</a>
                     </div>
                 </div>
-                {% endfor %}
             </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about my-5">
-        <div class="container text-center">
-            <h2>{% trans "about" %}</h2>
-            <!-- Inline level -->
-                <span class="d-inline-block" style="max-width: 650px; font-size: 20px;">
-                    <p>{% trans "We are a rapidly expanding company that operates in over 20 countries across five regions spanning Europe and Asia.Our team consists of seasoned experts and professionals with over 12 years of experience in the IT industry." %}</p>
-                </span>
-        </div>
-    </section>
-        
-    <!-- Contacts Section -->
-    <section id="contacts" class="contacts my-5">
-        <div class="container text-center">
-            <h2>{% trans "contacts" %}</h2>
-            <!-- Inline level -->
-                <span class="d-inline-block" style="max-width: 650px; font-size: 20px;">
-                    <p>e-mail: onicorp.tech@gmail.com</p>
-                </span>
-        </div>
-    </section>
+        </nav>
     
-    <!-- Footer Section -->
-    <section id="footer" class="footer my-5">
-        <div class="container text-center border-line" style = "position: flex; top: 0; left: 0; width: 70%; height: 2px; background-color: black; z-index: 9999;"></div>
-            <br>
-            <div class="container d-flex justify-content-between" style = "font-size: 20px;">
-                <div >
-                    onicorp.tech@gmail.com
-                </div>
-                <div>
-                    onicorp<sup>©</sup>
+        <!-- Second Logo Section -->
+        <section id="big_logo" class="container_full second-logo text-center my-5">
+            <div class="container d-flex justify-content-center">
+                <img src="../static/media/big_shot_logo.png" alt="Onicorp" style="max-width: 130%; height: auto;">
+            </div>
+        </section>
+    
+        <!-- Products Section -->
+        <section id="products" class="products  my-5">
+            <div class="container text-center ">
+                <h2>{% trans "products" %}</h2>
+                <span class="d-inline-block" style="max-width: 650px; font-size: 20px;">
+                    {% trans "The Order Manager service generates order files from original images according to the provided list of articles." %}
+                </span>
+                <div id="carouselExampleDark" class="carousel carousel-dark slide  my-4" data-bs-ride="carousel" data-bs-interval="3000">
+                    <div class="carousel-inner">
+                        {% if request.LANGUAGE_CODE == 'en' %}
+                            <div class="carousel-item active" data-bs-interval="1000">
+                                <img src="../static/media/1_slide_eng.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <img src="../static/media/2_slide_eng.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../static/media/3_slide_eng.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
+                            </div>
+                        {% else %}
+                            <div class="carousel-item active" data-bs-interval="1000">
+                                <img src="../static/media/1_slide_ru.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <img src="../static/media/2_slide_ru.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../static/media/3_slide_ru.png" class="d-block mx-auto" alt="slide" style="max-width: 70%; height: auto;">
+                            </div>
+                        {% endif %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <!-- Price Section -->
+        <section id="price" class="price my-5 ">
+            <div class="container text-center ">
+                <h2>{% trans "price" %}</h2>
+                <span class="d-inline-block" style="max-width: 650px; font-size: 20px;">
+                    {% trans "Buy a subscription to Order Manager at current prices." %}
+                </span>
+                <div class="row my-3">
+                    {% for product in products %}
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="card mx-auto my-1" style="width: 14rem;">
+                            <div class="card-body">
+                                <span class="license-term" style="font-size: 30px; font-weight: bold">{% trans product.license_term %}</span>
+                                <br>
+                                <br>
+                                <span class="text-strike" style="font-size: 40px;">{{product.old_price}}</span>
+                                <br>
+                                <span class="product-price" style="font-size: 50px; font-weight: bold">{{product.price}}</span>
+                                <br>
+                                <span>{{product.currency_type}}</span>
+                                <br>
+                                <br>
+                                <button class="btn btn-warning" style="font-weight: bold">{% trans "buy" %}</button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    
+        <!-- About Section -->
+        <section id="about" class="about my-5">
+            <div class="container text-center">
+                <h2>{% trans "about" %}</h2>
+                <!-- Inline level -->
+                    <span class="d-inline-block" style="max-width: 650px; font-size: 20px;">
+                        {% trans "We are a rapidly expanding company that operates in over 20 countries across five regions spanning Europe and Asia.Our team consists of seasoned experts and professionals with over 12 years of experience in the IT industry." %}
+                    </span>
+            </div>
+        </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
-</body>
+        <!-- Contacts Section -->
+        <section id="contacts" class="contacts my-5">
+            <div class="container text-center">
+                <h2>{% trans "contacts" %}</h2>
+                <!-- Inline level -->
+                    <span class="d-inline-block" style="max-width: 650px; font-size: 20px;">
+                        e-mail: onicorp.tech@gmail.com
+                    </span>
+            </div>
+        </section>
+        
+        <!-- Footer Section -->
+        <section id="footer" class="footer my-5">
+            <div class="container text-center border-line" style = "top: 0; left: 0; width: 70%; height: 2px; background-color: black; z-index: 9999;">
+                <br>
+                <div class="container d-flex justify-content-between" style = "font-size: 20px;">
+                    <div >
+                        onicorp.tech@gmail.com
+                    </div>
+                    <div>
+                        onicorp<sup>©</sup>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>
 
 

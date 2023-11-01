@@ -2,9 +2,15 @@
 
 function changeLanguage(languageCode) {
     // Отправляем AJAX-запрос на сервер с выбранным языком
+    var csrftoken = getCookie('csrftoken'); // Получаем CSRF-токен
+    console.log('CSRF Token:', csrftoken); // Выводим токен CSRF в консоль
+
+    // Устанавливаем атрибуты SameSite и Secure для куки csrftoken
+    document.cookie = 'csrftoken=' + csrftoken + '; path=/; SameSite=None; Secure';
+
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/i18n/setlang/', true);
-    xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken')); // Установите CSRF-токен
+    xhr.setRequestHeader('X-CSRFToken', csrftoken); // Установите CSRF-токен
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
         if (xhr.status === 200) {
