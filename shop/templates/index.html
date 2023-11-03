@@ -11,7 +11,6 @@
         {% load static %}
         <script src="/static/js/language.js"></script>
         <script src="/static/js/bootstrap.min.js"></script>
-
     </head>
     <body>
     
@@ -26,13 +25,16 @@
                 </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="justify-content: flex-end; font-size: 24px;">
                     <div class="navbar-nav ml-auto text-center">
-                        <div class="nav-item"><a class="nav-link" href="#products">{% trans "products" %}</a></div>
-                        <div class="nav-item"><a class="nav-link" href="#price">{% trans "price" %}</a></div>
-                        <div class="nav-item"><a class="nav-link" href="#about">{% trans "about" %}</a></div>
-                        <div class="nav-item"><a class="nav-link" href="#contacts">{% trans "contacts" %}</a></div>
-                        <a class="nav-item nav-link" style="margin: 0;  white-space: nowrap;" href="#" onclick="changeLanguage('en')">en</a>
-                        <span style="padding: 8px; color: grey"> | </span>
-                        <a class="nav-item nav-link" style="margin: 0;  white-space: nowrap;" href="#" onclick="changeLanguage('ru')">ru</a>
+                        <div class=""><a class="nav-link nav-item" href="#products">{% trans "products" %}</a></div>
+                        <a class="nav-link nav-item" href="#price">{% trans "price" %}</a>
+                        <a class="nav-link nav-item" href="#about">{% trans "about" %}</a>
+                        <a class="nav-link nav-item" href="#contacts">{% trans "contacts" %}</a>
+                        
+                        <div class="nav-link">
+                            <a class="nav-item " style="text-decoration: none; color: gray;" href="#" onclick="changeLanguage('en')">en</a>
+                            <span class="nav-item" style="padding: 0px; color: gray;"> | </span>
+                            <a class="nav-item"  style="text-decoration: none; color: gray;" href="#" onclick="changeLanguage('ru')">ru</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -123,7 +125,7 @@
                 <h2>{% trans "about" %}</h2>
                 <!-- Inline level -->
                     <span class="d-inline-block" style="max-width: 650px; font-size: 20px;">
-                        {% trans "We are a rapidly expanding company that operates in over 20 countries across five regions spanning Europe and Asia.Our team consists of seasoned experts and professionals with over 12 years of experience in the IT industry." %}
+                        {% trans "Our company is a highly professional team of software product developers ready to provide you with innovative solutions. We specialize in custom development for clients from around the world, delivering individual and high-quality products. Our experience and expertise enable us to bring the most ambitious projects to life. We take pride in our ability to work as a team and achieve success even in challenging tasks." %}
                     </span>
             </div>
         </section>
@@ -155,6 +157,3 @@
         </section>
     </body>
 </html>
-
-
-

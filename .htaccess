@@ -19,9 +19,13 @@ PassengerAppLogFile "/home/pozvpmwh/onicorp.dev/logs/logs.log"
 SetEnv DB_HOST mydbhost
 SetEnv DB_USER mydbuser
 SetEnv DEBUG False
-SetEnv SECRET_KEY '______________'
+SetEnv SECRET_KEY 'django-insecure-siuqt7=qhyk=559hjw#7f1chi#=@=ith)d7lu)itedjqgb3=i!'
 SetEnv ALLOWED_HOSTS *
 </IfModule>
 # DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
 # RewriteCond %{HTTP_HOST} ^www\.onicorp\.dev$
 # RewriteRule ^onicorp\.dev$ "https\:\/\/onicorp\.dev\/" [R=301,L]
+
+#<Files "index.html">
+#  Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+#</Files>                                                                            

@@ -24,22 +24,27 @@ body {
   }
 
 .nav-container {
-    display: flex; /* Используем flexbox для размещения элементов в одной строке */
-    align-items: center; /* Выравниваем элементы по вертикали по центру */
-    white-space: nowrap; /* Запрещаем перенос текста */
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
 }
 
 .nav-container a,
 .nav-container span {
     margin: 0;
     padding: 5px;
-    white-space: nowrap; /* Запрещаем перенос текста для внутренних элементов */
+    white-space: nowrap;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.nav-link{
+    display: inline-block;
+    margin-right: 10px; 
 }
 
 @media (max-width: 790px) {
@@ -49,11 +54,10 @@ body {
     }
 
     .navbar-toggler {
-        margin-top: 10px; /* Настройте отступ сверху по вашему усмотрению */
+        margin-top: 10px; 
        
     }
       .nav-item {
-    display: inline-block; /* Отображать элементы в одной строке */
-    margin-right: 10px; /* Опциональное пространство между элементами */
+    display: inline-block; 
   }
 }

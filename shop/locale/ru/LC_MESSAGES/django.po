@@ -22,7 +22,7 @@ msgstr ""
 
 #: .\shop\templates\index.html:35 .\shop\templates\index.html:67
 msgid "products"
-msgstr "программы и сервисы"
+msgstr "программы"
 
 #: .\shop\templates\index.html:36 .\shop\templates\index.html:113
 msgid "price"
@@ -54,14 +54,20 @@ msgstr "купить"
 
 #: .\shop\templates\index.html:148
 msgid ""
-"We are a rapidly expanding company that operates in over 20 countries across "
-"five regions spanning Europe and Asia.Our team consists of seasoned experts "
-"and professionals with over 12 years of experience in the IT industry."
+"Our company is a highly professional team of software product developers "
+"ready to provide you with innovative solutions. We specialize in custom "
+"development for clients from around the world, delivering individual and "
+"high-quality products. Our experience and expertise enable us to bring "
+"the most ambitious projects to life. We take pride in our ability to work "
+"as a team and achieve success even in challenging tasks."
 msgstr ""
-"Мы — быстрорастущая компания, оперирующая в более чем 20 странах пяти "
-"регионов, охватывающих Европу и Азию. Наша команда состоит из опытных "
-"экспертов и профессионалов с более чем 12-летним стажем работы в сфере "
-"информационных технологий."
+"Наша компания - это высокопрофессиональная команда разработчиков "
+"программных продуктов, готовая обеспечить вас инновационными решениями. "
+"Мы специализируемся на разработке на заказ для клиентов со всего мира, "
+"предоставляя индивидуальные и высококачественные продукты. Наш опыт и "
+"экспертиза позволяют нам воплощать в жизнь самые амбициозные проекты. "
+"Мы гордимся нашей способностью работать в команде и достигать успеха "
+"даже в сложных задачах. "
 
 msgid "1 year"
 msgstr "1 год"
