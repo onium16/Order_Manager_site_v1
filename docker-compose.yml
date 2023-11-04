@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: onicorp_test
+    command: gunicorn --bind 0.0.0.0:8000 base.wsgi:application
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=django-insecure-siuqt7=qhyk=559hjw#7f1chi#=@=ith)d7lu)itedjqgb3=i!
+      - DEBUG=False
+      - DB_HOST=mydbhost
+      - DB_USER=mydbuser
+      - ALLOWED_HOSTS="['0.0.0.0:8000']"
+
