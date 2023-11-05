@@ -23,31 +23,30 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ------------------- SERVER START ---------------------
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = os.environ.get('DEBUG', True)
-DB_HOST = os.environ.get('DB_HOST')
-DB_USER = os.environ.get('DB_USER')
+# SECRET_KEY = os.environ.get('SECRET_KEY')
+# DEBUG = os.environ.get('DEBUG', True)
+# DB_HOST = os.environ.get('DB_HOST')
+# DB_USER = os.environ.get('DB_USER')
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '')
-if not ALLOWED_HOSTS:
-    ALLOWED_HOSTS = []
-else:
-    ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS.split(',') if ':' not in host]
+# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '')
+# if not ALLOWED_HOSTS:
+#     ALLOWED_HOSTS = []
+# else:
+#     ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS.split(',') if ':' not in host]
 
 # ------------------- SERVER END---------------------
 
 # # ------------------- LOCAL START ---------------------
-# SECRET_KEY = config('SECRET_KEY')
-# DEBUG = config('DEBUG', default=True, cast=bool)
-# DB_HOST = config('DB_HOST')
-# DB_USER = config('DB_USER')
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=True, cast=bool)
+DB_HOST = config('DB_HOST')
+DB_USER = config('DB_USER')
 
-# # ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='')
-# if not ALLOWED_HOSTS:
-#     ALLOWED_HOSTS = []
-# else:
-#     ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS.split(',') if ':' not in host]  
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='')
+if not ALLOWED_HOSTS:
+    ALLOWED_HOSTS = []
+else:
+    ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS.split(',') if ':' not in host]  
 
 # # ------------------- LOCAL END---------------------
 
