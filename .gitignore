@@ -4,6 +4,7 @@ base/__pycache__/
 Screenshot_deploy.png
 site_original.zip
 shop/__pycache__/
+shop/migrations/__pycache__/
 base/__pycache__/
 __pycache__/
 instraction.md
