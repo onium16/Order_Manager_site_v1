@@ -46,6 +46,6 @@ COPY . .
 # CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 # Запускаем приложение с помощью Gunicorn
-# CMD ["gunicorn", "--bind", "0.0.0.0:8000", "onicorp_test.wsgi"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "base.wsgi"]
 
 

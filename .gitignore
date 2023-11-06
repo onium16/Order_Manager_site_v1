@@ -1,5 +1,8 @@
 venv
 base/__pycache__/
-__pycache__
 .env
 Screenshot_deploy.png
+site_original.zip
+__pycache__/
+instraction.md
+INSTRACTION
