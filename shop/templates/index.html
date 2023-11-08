@@ -111,7 +111,24 @@
                                 <span>{{product.currency_type}}</span>
                                 <br>
                                 <br>
-                                <button class="btn btn-warning" style="font-weight: bold">{% trans "buy" %}</button>
+                                <button class="btn btn-warning" style="font-weight: bold" data-bs-toggle="modal" onclick="window.location.href='{{product.stripe_api}}'">{% trans "buy" %}</button>
+
+                                <script>
+                                function redirectToLink(link) {
+                                    if (link === '#link') {
+                                        // Здесь можно указать значение по умолчанию, если #link не задан.
+                                        link = {{product.stripe_api}};
+                                    }
+                                    window.location.href = link;
+                                }
+                                </script>
+
+
+
+                                {% comment %} data-bs-toggle="modal" 
+                                
+                                
+                                data-bs-target="#confirmationModal" {% endcomment %}
                             </div>
                         </div>
                     </div>
@@ -120,6 +137,27 @@
             </div>
         </section>
     
+        <!-- Payment Section  -->
+        <section>
+            <!-- success message  triger=""" data-bs-toggle="modal" data-bs-target="#confirmationModal" """-->
+            <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            {% trans "Thank you for your purchase!"%}
+                            <br>
+                            {% trans "Within 24 hours, a sales specialist will contact you and provide you with the product you've purchased. If you have any questions, please contact us at the following email: onicorp.tech@gmail.com" %}
+                        </div>
+                        <div class="modal-footer">
+                            <a href="/" class="btn btn-primary" data-bs-dismiss="modal">
+                                {% trans "Return to the homepage" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- About Section -->
         <section id="about" class="about my-5">
             <div class="container text-center">
@@ -130,6 +168,8 @@
                     </span>
             </div>
         </section>
+
+        
 
         <!-- Contacts Section -->
         <section id="contacts" class="contacts my-5">

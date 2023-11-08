@@ -162,7 +162,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
+STRIPE_PUBLISHABLE_KEY = 'pk_live_51O6dUwFBnjR703bFT6ZxGog6yogi1tEfZe8RZ0RurUVlYYWdbO10N39s9TeKNdnEm2VTeeyxz4a1uCokHh5r2cSv00AQBHvxns'
 # COMMANDS FOR CREAT & management *.po files
 # COMMAND FOR CREATE *.PO  python manage.py makemessages -l ru --ignore=venv
 # python manage.py makemessages -a --ignore=venv

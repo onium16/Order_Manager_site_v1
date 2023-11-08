@@ -15,6 +15,7 @@ class Product(models.Model):
     currency_type = models.CharField(max_length=255)
     license_term = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    stripe_api = models.CharField(max_length=255)
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
