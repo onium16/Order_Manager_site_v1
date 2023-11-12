@@ -31,39 +31,42 @@
         </div>
     </div>
     
-    <script>
-        window.onload = function() {
-            // Извлекаем параметры URL
-            var urlParams = new URLSearchParams(window.location.search);
-            var productId = urlParams.get('productId');
-            var productName = urlParams.get('productName');
-            var licenseTerm = urlParams.get('licenseTerm');
-            var productPrice = urlParams.get('productPrice');
-            var currencyType = urlParams.get('currencyType');
-        
-            // Автоматически заполняем форму
-            document.getElementById('id_product_name').value = productName;
-            document.getElementById('id_license_term').value = licenseTerm;
+<script>
+    window.onload = function() {
+        // Извлекаем параметры URL
+        var urlParams = new URLSearchParams(window.location.search);
+        var productId = urlParams.get('productId');
+        var productName = urlParams.get('productName');
+        var licenseTerm = urlParams.get('licenseTerm');
+        var categoryName = urlParams.get('categoryName');
+        var productPrice = urlParams.get('productPrice');
+        var currencyType = urlParams.get('currencyType');
     
-            // Выбираем соответствующий вариант в выпадающем списке categoryName
-            var categoryDropdown = document.getElementById('id_category_name');
-            var categoryOptions = categoryDropdown.options;
-            for (var i = 0; i < categoryOptions.length; i++) {
-                if (categoryOptions[i].text === categoryName) {
-                    categoryOptions[i].selected = true;
-                    break;
-                }
+        // Автоматически заполняем форму
+        document.getElementById('id_product_name').value = productName;
+        document.getElementById('id_license_term').value = licenseTerm;
+
+        // Выбираем соответствующий вариант в выпадающем списке categoryName
+        var categoryDropdown = document.getElementById('id_category_name');
+        var categoryOptions = categoryDropdown.options;
+        for (var i = 0; i < categoryOptions.length; i++) {
+            if (categoryOptions[i].text === categoryName) {
+                categoryOptions[i].selected = true;
+                break;
             }
-    
-            document.getElementById('id_product_price').value = productPrice;
-            document.getElementById('id_currency_type').value = currencyType;
-            
-            // Блокируем заполненные поля
-            document.getElementById('id_product_name').readOnly = true;
-            document.getElementById('id_license_term').readOnly = true;
-            document.getElementById('id_product_price').readOnly = true;
-            document.getElementById('id_currency_type').readOnly = true;
         }
-    </script>
+
+        document.getElementById('id_product_price').value = productPrice;
+        document.getElementById('id_currency_type').value = currencyType;
+        
+        // Блокируем заполненные поля
+        document.getElementById('id_product_name').readOnly = true;
+        document.getElementById('id_license_term').readOnly = true;
+        document.getElementById('id_product_price').readOnly = true;
+        document.getElementById('id_currency_type').readOnly = true;
+    }
+</script>
+
+    
 </body>
 </html>
