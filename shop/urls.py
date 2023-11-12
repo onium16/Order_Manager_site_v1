@@ -5,14 +5,16 @@ from django.conf.urls.static import static
 from django.views.i18n import set_language
 from . import views
 
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('change-language', views.change_language, name='change_language'),
+    path('payment/', views.payment, name='payment'),  # Add this line
+    # Другие маршруты
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    
     
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])

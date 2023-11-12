@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-06 13:18+0100\n"
+"POT-Creation-Date: 2023-11-12 03:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,23 +20,23 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\shop\templates\index.html:29 .\shop\templates\index.html:54
+#: .\shop\templates\index.html:30 .\shop\templates\index.html:55
 msgid "products"
 msgstr "программы"
 
-#: .\shop\templates\index.html:30 .\shop\templates\index.html:95
+#: .\shop\templates\index.html:31 .\shop\templates\index.html:96
 msgid "price"
 msgstr "цены"
 
-#: .\shop\templates\index.html:31 .\shop\templates\index.html:126
+#: .\shop\templates\index.html:32 .\shop\templates\index.html:208
 msgid "about"
 msgstr "о нас"
 
-#: .\shop\templates\index.html:32 .\shop\templates\index.html:168
+#: .\shop\templates\index.html:33 .\shop\templates\index.html:219
 msgid "contacts"
 msgstr "контакты"
 
-#: .\shop\templates\index.html:56
+#: .\shop\templates\index.html:57
 msgid ""
 "The Order Manager service generates order files from original images "
 "according to the provided list of articles."
@@ -44,15 +44,17 @@ msgstr ""
 "Служба «Order Manager» осуществляет формирование файлов заказа из "
 "оригинальных изображений согласно предоставленного списка артикулов."
 
-#: .\shop\templates\index.html:97
-msgid "Buy a subscription to Order Manager at current prices."
+#: .\shop\templates\index.html:98
+#, fuzzy
+#| msgid "Buy a subscription to Order Manager at current prices."
+msgid "Buy a subscription to programs at current prices."
 msgstr "Приобретай подписку на Order Manager по актуальным ценам."
 
-#: .\shop\templates\index.html:114
+#: .\shop\templates\index.html:121
 msgid "buy"
 msgstr "купить"
 
-#: .\shop\templates\index.html:129
+#: .\shop\templates\index.html:211
 msgid ""
 "Our company is a highly professional team of software product developers "
 "ready to provide you with innovative solutions. We specialize in custom "
@@ -69,21 +71,20 @@ msgstr ""
 "гордимся нашей способностью работать в команде и достигать успеха даже в "
 "сложных задачах. "
 
-#: .\shop\templates\index.html:145
-msgid "Thank you for your purchase!"
-msgstr "Спасибо за покупку!"
+#~ msgid "Thank you for your purchase!"
+#~ msgstr "Спасибо за покупку!"
 
-#: .\shop\templates\index.html:146
-msgid ""
-"Within 24 hours, a sales specialist will contact you and provide you with "
-"the product you've purchased. If you have any questions, please contact us "
-"at the following email: onicorp.tech@gmail.com"
-msgstr ""
-"В течение 24 часов с Вами свяжется специалист по продажам и предоставит приобретенный Вами продукт. При возникновении вопросов обращайтесь на e-mail: onicorp.tech@gmail.com"
+#~ msgid ""
+#~ "Within 24 hours, a sales specialist will contact you and provide you with "
+#~ "the product you've purchased. If you have any questions, please contact "
+#~ "us at the following email: onicorp.tech@gmail.com"
+#~ msgstr ""
+#~ "В течение 24 часов с Вами свяжется специалист по продажам и предоставит "
+#~ "приобретенный Вами продукт. При возникновении вопросов обращайтесь на e-"
+#~ "mail: onicorp.tech@gmail.com"
 
-#: .\shop\templates\index.html:155
-msgid "Return to the homepage"
-msgstr "Вернуться на главную страницу"
+#~ msgid "Return to the homepage"
+#~ msgstr "Вернуться на главную страницу"
 
 #~ msgid "1 year"
 #~ msgstr "1 год"

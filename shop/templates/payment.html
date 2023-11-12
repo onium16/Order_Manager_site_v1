@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Payment Section  -->
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Купить продукт</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'js/bootstrap.min.js.map' %}"> {% endcomment %}
+    <style>
+        /* Стили для отключенных (заблокированных) полей ввода */
+        input[readonly] {
+            background-color: #f4f4f4; /* Цвет фона для заблокированных полей */
+            color: #999; /* Цвет текста для заблокированных полей */
+            cursor: not-allowed; /* Курсор, указывающий на то, что поле недоступно */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="modal-header">
+            <h5 class="modal-title" id="buy-modal-label">Купить продукт</h5>
+        </div>
+        <div class="modal-body">
+            <form method="post" action="{% url 'payment' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Отправить запрос</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href = '{% url 'index' %}'">Закрыть</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        window.onload = function() {
+            // Извлекаем параметры URL
+            var urlParams = new URLSearchParams(window.location.search);
+            var productId = urlParams.get('productId');
+            var productName = urlParams.get('productName');
+            var licenseTerm = urlParams.get('licenseTerm');
+            var productPrice = urlParams.get('productPrice');
+            var currencyType = urlParams.get('currencyType');
+        
+            // Автоматически заполняем форму
+            document.getElementById('id_product_name').value = productName;
+            document.getElementById('id_license_term').value = licenseTerm;
+    
+            // Выбираем соответствующий вариант в выпадающем списке categoryName
+            var categoryDropdown = document.getElementById('id_category_name');
+            var categoryOptions = categoryDropdown.options;
+            for (var i = 0; i < categoryOptions.length; i++) {
+                if (categoryOptions[i].text === categoryName) {
+                    categoryOptions[i].selected = true;
+                    break;
+                }
+            }
+    
+            document.getElementById('id_product_price').value = productPrice;
+            document.getElementById('id_currency_type').value = currencyType;
+            
+            // Блокируем заполненные поля
+            document.getElementById('id_product_name').readOnly = true;
+            document.getElementById('id_license_term').readOnly = true;
+            document.getElementById('id_product_price').readOnly = true;
+            document.getElementById('id_currency_type').readOnly = true;
+        }
+    </script>
+</body>
+</html>
