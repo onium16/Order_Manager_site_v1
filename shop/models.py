@@ -42,4 +42,3 @@ class Client(Product_def):
     
     def __str__(self):
         return f'{self.first_name} {self.last_name} | {self.product_name} | {self.request_date} | {self.subscription_end_date} | {self.email} | {self.processed} |'
-

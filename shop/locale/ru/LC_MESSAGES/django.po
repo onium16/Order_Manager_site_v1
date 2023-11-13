@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-12 03:13+0100\n"
+"POT-Creation-Date: 2023-11-13 00:47+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,23 +20,23 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\shop\templates\index.html:30 .\shop\templates\index.html:55
+#: .\shop\templates\index.html:29 .\shop\templates\index.html:54
 msgid "products"
 msgstr "программы"
 
-#: .\shop\templates\index.html:31 .\shop\templates\index.html:96
+#: .\shop\templates\index.html:30 .\shop\templates\index.html:95
 msgid "price"
 msgstr "цены"
 
-#: .\shop\templates\index.html:32 .\shop\templates\index.html:208
+#: .\shop\templates\index.html:31 .\shop\templates\index.html:139
 msgid "about"
 msgstr "о нас"
 
-#: .\shop\templates\index.html:33 .\shop\templates\index.html:219
+#: .\shop\templates\index.html:32 .\shop\templates\index.html:150
 msgid "contacts"
 msgstr "контакты"
 
-#: .\shop\templates\index.html:57
+#: .\shop\templates\index.html:56
 msgid ""
 "The Order Manager service generates order files from original images "
 "according to the provided list of articles."
@@ -44,17 +44,15 @@ msgstr ""
 "Служба «Order Manager» осуществляет формирование файлов заказа из "
 "оригинальных изображений согласно предоставленного списка артикулов."
 
-#: .\shop\templates\index.html:98
-#, fuzzy
-#| msgid "Buy a subscription to Order Manager at current prices."
+#: .\shop\templates\index.html:97
 msgid "Buy a subscription to programs at current prices."
 msgstr "Приобретай подписку на Order Manager по актуальным ценам."
 
-#: .\shop\templates\index.html:121
+#: .\shop\templates\index.html:118
 msgid "buy"
 msgstr "купить"
 
-#: .\shop\templates\index.html:211
+#: .\shop\templates\index.html:142
 msgid ""
 "Our company is a highly professional team of software product developers "
 "ready to provide you with innovative solutions. We specialize in custom "
@@ -86,14 +84,16 @@ msgstr ""
 #~ msgid "Return to the homepage"
 #~ msgstr "Вернуться на главную страницу"
 
-#~ msgid "1 year"
-#~ msgstr "1 год"
 
-#~ msgid "1 month"
-#~ msgstr "1 месяц"
+#: .\shop\templates\index.html:106
+msgid "1 year"
+msgstr "1 год"
 
-#~ msgid "3 months"
-#~ msgstr "3 месяца"
+msgid "1 month"
+msgstr "1 месяц"
 
-#~ msgid "6 months"
-#~ msgstr "6 месяцев"
+msgid "3 months"
+msgstr "3 месяца"
+
+msgid "6 months"
+msgstr "6 месяцев"

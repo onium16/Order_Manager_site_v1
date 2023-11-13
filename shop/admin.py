@@ -17,6 +17,6 @@ class CustomAdminSite(AdminSite):
 
 
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'phone_number', 'email', 'request_date', 'subscription_end_date', 'license_key', 'product_name', 'category_name', 'product_price', 'currency_type', 'license_term', 'processed')
+    list_display = ('processed', 'first_name', 'last_name', 'phone_number', 'email',  'product_name', 'category_name', 'product_price', 'currency_type',  'license_key', 'license_term', 'request_date', 'subscription_end_date',)
 
 admin.site.register(Client, ClientAdmin)

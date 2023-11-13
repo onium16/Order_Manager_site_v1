@@ -14,7 +14,6 @@
         <script src='../static/js/bootstrap.min.js'></script>
     </head>
     <body>
-    
         <!-- Header Section -->
         <nav class="navbar navbar-expand-lg bg-light">  
             <div class="container">
@@ -98,38 +97,36 @@
                 </span>
                 <div class="row my-3">
                     {% for category in categories %}
-                        {% comment %} {% if products.count > 0 %} {% endcomment %}
-                            <span  style="font-size: 28px; font-weight: bold;  margin-top: 20px; margin-bottom: 10px;">{{ category.category_name }}</span>
-                            {% for product in products %}
-                                {% if product.category_name == category %}
-                                    <div class="col-lg-3 col-md-6 col-12">
-                                        <div class="card mx-auto my-1" style="width: 14rem;">
-                                            <div class="card-body">
-                                                <span class="license-term" style="font-size: 30px; font-weight: bold">{% trans product.license_term %}</span>
-                                                <br>
-                                                <br>
-                                                <span class="text-strike" style="font-size: 40px;">{{product.old_price}}</span>
-                                                <br>
-                                                <span class="product-price" style="font-size: 50px; font-weight: bold">{{product.product_price}}</span>
-                                                <br>
-                                                <span>{{product.currency_type}}</span>
-                                                <br>
-                                                <br>
-                                                
-                                                <button type="button" class="btn btn-warning" onclick="redirectToPayment('{{ product.product_name }}', '{{ product.license_term }}', '{{ product.category_name }}', '{{ product.product_price }}', '{{ product.currency_type }}')">{% trans "buy" %}</button>
+                        <span  style="font-size: 30px; margin-top: 20px; margin-bottom: 10px;">{{ category.category_name }}</span>
+                        {% for product in products %}
+                            {% if product.category_name == category %}
+                                <div class="col-lg-3 col-md-6 col-12">
+                                    <div class="card mx-auto my-1" style="width: 14rem;">
+                                        <div class="card-body">
+                                            <span class="license-term" style="font-size: 30px; font-weight: bold">{% trans product.license_term %}</span>
+                                            <br>
+                                            <br>
+                                            <span class="text-strike" style="font-size: 40px;">{{product.old_price}}</span>
+                                            <br>
+                                            <span class="product-price" style="font-size: 50px; font-weight: bold">{{product.product_price}}</span>
+                                            <br>
+                                            <span>{{product.currency_type}}</span>
+                                            <br>
+                                            <br>
+                                            
+                                            <button type="button" class="btn btn-warning" style="font-size: 20px; font-weight: bold" onclick="redirectToPayment('{{ product.product_name }}', '{{ product.license_term }}', '{{ product.category_name }}', '{{ product.product_price }}', '{{ product.currency_type }}')">{% trans "buy" %}</button>
 
-                                                <script>
-                                                    function redirectToPayment(productName, licenseTerm, categoryName, productPrice, currencyType) {
-                                                        var redirectUrl ='{% url "payment" %}?productName=' + encodeURIComponent(productName) +'&licenseTerm=' + encodeURIComponent(licenseTerm) +'&categoryName=' + encodeURIComponent(categoryName) + '&productPrice=' + encodeURIComponent(productPrice) + '&currencyType=' + encodeURIComponent(currencyType);
-                                                        window.location.href = redirectUrl;
-                                                    }
-                                                </script>
-                                            </div>
+                                            <script>
+                                                function redirectToPayment(productName, licenseTerm, categoryName, productPrice, currencyType) {
+                                                    var redirectUrl ='{% url "payment" %}?productName=' + encodeURIComponent(productName) +'&licenseTerm=' + encodeURIComponent(licenseTerm) +'&categoryName=' + encodeURIComponent(categoryName) + '&productPrice=' + encodeURIComponent(productPrice) + '&currencyType=' + encodeURIComponent(currencyType);
+                                                    window.location.href = redirectUrl;
+                                                }
+                                            </script>
                                         </div>
                                     </div>
-                                {% endif %}
-                            {% endfor %}
-
+                                </div>
+                            {% endif %}
+                        {% endfor %}
                     {% endfor %}
                 </div>
             </div>
@@ -158,11 +155,11 @@
         </section>
         
         <!-- Footer Section -->
-        <section id="footer" class="footer my-5">
-            <div class="container text-center border-line" style = "top: 0; left: 0; width: 70%; height: 2px; background-color: black; z-index: 9999;">
+        <section id="footer" class="footer my-5" style = "margin-button: 20px;">
+            <div class="container text-center border-line" style = "top: 0; left: 0; width: 70%; height: 2px; background-color: black; z-index: 9999; ">
                 <br>
                 <div class="container d-flex justify-content-between" style = "font-size: 20px;">
-                    <div >
+                    <div>
                         onicorp.tech@gmail.com
                     </div>
                     <div>

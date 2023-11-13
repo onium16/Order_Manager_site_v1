@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from .models import Product, Category
 from .forms import ClientForm
 
+
 # Create your views here.
 def index(request):
     products = Product.objects.all()
@@ -27,23 +28,3 @@ def payment(request):
             return redirect('index')
         else:
             return render(request, 'payment.html', {'form': form})
-
-# def payment_view(request):
-#     productId = request.GET.get('productId')
-#     productName = request.GET.get('productName')
-#     licenseTerm = request.GET.get('licenseTerm')
-#     categoryName = request.GET.get('categoryName')
-#     productPrice = request.GET.get('productPrice')
-#     currencyType = request.GET.get('currencyType')
-
-#     # Передаем эти значения в контекст формы
-#     context = {
-#         'productId': productId,
-#         'productName': productName,
-#         'licenseTerm': licenseTerm,
-#         'categoryName': categoryName,
-#         'productPrice': productPrice,
-#         'currencyType': currencyType,
-#     }
-
-#     return render(request, 'payment.html', context)
