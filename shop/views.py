@@ -1,3 +1,4 @@
+from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse
@@ -25,6 +26,9 @@ def payment(request):
         form = ClientForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('index')
+                        # Добавляем параметр success=1 к URL перед редиректом
+            redirect_url = reverse('index') + '?success=1'
+            
+            return redirect(redirect_url)
         else:
             return render(request, 'payment.html', {'form': form})

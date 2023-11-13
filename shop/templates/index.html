@@ -10,8 +10,22 @@
         <link rel="icon" href="../static/media/favicon.ico">
         <link rel="stylesheet" href="../static/bootstrap.min.css">
         <link rel="stylesheet" href="../static/styles.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
         <script src='../static/js/language.js'></script>
         <script src='../static/js/bootstrap.min.js'></script>
+        <script>
+            // Функция для отображения модального окна при наличии параметра success=1 в URL
+            window.onload = function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const successParam = urlParams.get('success');
+                
+                if (successParam === '1') {
+                    // Используйте здесь код для отображения модального окна
+                    // Например, если используете Bootstrap modal:
+                    $('#successModal').modal('show');
+                }
+            };
+        </script>
     </head>
     
     <body>
@@ -131,6 +145,29 @@
                     {% endfor %}
                 </div>
             </div>
+        </section>
+
+        <section>
+            <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="successModalLabel">{% trans 'Thanks for your request!' %}</h5>
+                      <button type="button" class="btn btn-outline-primary" data-dismiss="modal" onclick="window.location.href = '{% url 'index' %}'" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" style="max-width: 650px; font-size: 20px;">
+                        {% trans "Within 24 hours, a sales specialist will contact you and provide you with the product you've purchased. If you have any questions, please contact us at the following email: onicorp.tech@gmail.com" %}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" onclick="window.location.href = '{% url 'index' %}'">{% trans 'Close' %}</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+
         </section>
 
         <!-- About Section -->
