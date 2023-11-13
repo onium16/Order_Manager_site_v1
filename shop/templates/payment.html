@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <!-- Payment Section  -->
 <html lang="ru">
@@ -23,7 +24,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="title" id="buy-modal-label">Купить продукт</h5>
+                        <h5 class="title" id="buy-modal-label">{% trans 'Buy the product' %}</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="{% url 'payment' %}">
@@ -31,16 +32,28 @@
     
                             {% for field in form %}
                                 <div class="form-group row">
-                                    <label for="id_{{ field.name }}" class="col-sm-4 col-form-label text-md-right">{{ field.label }}</label>
+                                    <label for="id_{{ field.name }}" class="col-sm-4 col-form-label text-md-right">{% trans field.label %}</label>
                                     <div class="col-sm-8">
-                                        {{ field }}
+                                        {% if field.field.widget.attrs.type == 'hidden' %}
+                                            {{ field }}
+                                        {% else %}
+                                            {% if field.field.widget.attrs.type == 'select' %}
+                                                {{ field }}
+                                            {% else %}
+                                                {% if field.field.widget.attrs.readonly %}
+                                                    {{ field }}
+                                                {% else %}
+                                                    {{ field }}
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endif %}
                                     </div>
                                 </div>
                             {% endfor %}
     
                             <div class="text-center mt-4">
-                                <button type="submit" class="btn btn-primary">Отправить запрос</button>
-                                <button type="button" class="btn btn-secondary" onclick="window.location.href = '{% url 'index' %}'">Закрыть</button>
+                                <button type="submit" class="btn btn-primary">{% trans 'Submit' %}</button>
+                                <button type="button" class="btn btn-secondary" onclick="window.location.href = '{% url 'index' %}'">{% trans 'Close' %}</button>
                             </div>
                         </form>
                     </div>

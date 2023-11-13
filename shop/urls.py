@@ -8,8 +8,8 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('change-language', views.change_language, name='change_language'),
     path('payment/', views.payment, name='payment'),  # Add this line
+    path('change-language', views.change_language, name='change_language'),
     # Другие маршруты
 ]
 
