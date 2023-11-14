@@ -167,3 +167,10 @@ STRIPE_PUBLISHABLE_KEY = 'pk_live_51O6dUwFBnjR703bFT6ZxGog6yogi1tEfZe8RZ0RurUVlY
 # COMMAND FOR CREATE *.PO  python manage.py makemessages -l ru --ignore=venv
 # python manage.py makemessages -a --ignore=venv
 # python manage.py compilemessages
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Укажите SMTP-хост вашей почты
+EMAIL_PORT = 587  # Порт вашего SMTP-сервера
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'onicorp.tech@gmail.com'  # Ваш адрес электронной почты
+EMAIL_HOST_PASSWORD = 'lqqc tdwn bylj zsjt'  # Пароль от вашего адреса электронной почты

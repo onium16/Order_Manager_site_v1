@@ -9,7 +9,6 @@ class Category(models.Model):
     def __str__(self):
         return self.category_name 
     
-
 # Абстрактный базовый класс, который содержит общие поля для моделей Person и Employee
 class Product_def(models.Model):
     product_name = models.CharField(max_length=255)
@@ -28,7 +27,6 @@ class Product(Product_def):
 
     def __str__(self, field='default'):
         return f'{self.product_name}, {self.product_price}, {self.currency_type}, {self.license_term}'
-
 
 class Client(Product_def):
     first_name = models.CharField(max_length=100)
