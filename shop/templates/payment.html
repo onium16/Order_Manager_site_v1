@@ -70,6 +70,7 @@
         var licenseTerm = urlParams.get('licenseTerm');
         var categoryName = urlParams.get('categoryName');
         var productPrice = urlParams.get('productPrice');
+        var formattedProductPrice = parseFloat(productPrice.replace(',', '.'));
         var currencyType = urlParams.get('currencyType');
     
         // Автоматически заполняем форму
@@ -85,7 +86,7 @@
                 break;
             }
         }
-        document.getElementById('id_product_price').value = productPrice;
+        document.getElementById('id_product_price').value = formattedProductPrice;
         document.getElementById('id_currency_type').value = currencyType;
         
         // Блокируем заполненные поля
@@ -93,6 +94,8 @@
         document.getElementById('id_license_term').readOnly = true;
         document.getElementById('id_product_price').readOnly = true;
         document.getElementById('id_currency_type').readOnly = true;
+        
+
     }
 </script>
 
