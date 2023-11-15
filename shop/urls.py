@@ -5,12 +5,10 @@ from django.conf.urls.static import static
 from django.views.i18n import set_language
 from . import views
 
-
 urlpatterns = [
     path('', views.index, name='index'),
     path('payment/', views.payment, name='payment'),  # Add this line
-    path('change-language', views.change_language, name='change_language'),
-    # Другие маршруты
+    path('logo/', views.LogoView.as_view(), name='logo-view'),
 ]
 
 if settings.DEBUG:

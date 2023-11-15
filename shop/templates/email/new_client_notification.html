@@ -1,63 +1,116 @@
-<!-- new_client_notification.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>New Client Notification</title>
+    
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            background-color: #292b30;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .header_position {
+            font-size: 20px;
+            background-color: #292b30;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
         table {
-            border-collapse: collapse;
             width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
+        
         th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
+            font-size: 16px;
+            border: 1px solid #dee2e6;
             padding: 8px;
+            text-align: left;
         }
+
         th {
-            background-color: #f2f2f2;
+            background-color: #292b30;
+            color: #ffffff;
         }
     </style>
 </head>
+
 <body>
-    <h2>New Client Added:</h2>
-    <table>
-        <tr>
-            <th>Name</th>
-            <td>{{ client.first_name }}</td>
-        </tr>
-        <tr>
-            <th>Surname</th>
-            <td>{{ client.last_name }}</td>
-        </tr>
-        <tr>
-            <th>Email</th>
-            <td>{{ client.email }}</td>
-        </tr>
-        <tr>
-            <th>Phone</th>
-            <td>{{ client.phone_number }}</td>
-        </tr>
-        <tr>
-            <th colspan="2">Information about product:</th>
-        </tr>
-        <tr>
-            <th>Product Name</th>
-            <td>{{ client.product_name }}</td>
-        </tr>
-        <tr>
-            <th>Product Price</th>
-            <td>{{ client.product_price }}</td>
-        </tr>
-        <tr>
-            <th>Currency Type</th>
-            <td>{{ client.currency_type }}</td>
-        </tr>
-        <tr>
-            <th>License Term</th>
-            <td>{{ client.license_term }}</td>
-        </tr>
-    </table>
+    <div style="display: flex; justify-content: center; align-items: center;">
+    </div>
+    <img src='https://onicorp.dev/logo/' style="display: block; margin: 0 auto; max-width: 280px; padding: 30px;" alt='LOGO'>
+    <div class="header">
+        <h1 style="display: block; margin: 0 auto; max-width: 800px; padding: 20px;" >Congratulations , we have a new subscription!</h1>
+    </div>
+
+    <div class="content">
+        <table>
+            <th  class="header_position" colspan="2">New client information:</h2>
+            <tr>
+                <th>Name</th>
+                <td>{{ client.first_name }}</td>
+            </tr>
+            {% comment %} <tr>
+                <th>Surname</th>
+                <td>{{ client.last_name }}</td>
+            </tr> {% endcomment %}
+            <tr>
+                <th>Email</th>
+                <td>{{ client.email }}</td>
+            </tr>
+            {% comment %} <tr>
+                <th>Phone</th>
+                <td>{{ client.phone_number }}</td>
+            </tr> {% endcomment %}
+            <tr>
+                <th  class="header_position" colspan="2">User subscription details:</th>
+            </tr>
+            <tr>
+                <th>Product Name</th>
+                <td>{{ client.product_name }}</td>
+            </tr>
+            <tr>
+                <th>Product Price</th>
+                <td>{{ client.product_price }}</td>
+            </tr>
+            <tr>
+                <th>Currency Type</th>
+                <td>{{ client.currency_type }}</td>
+            </tr>
+            <tr>
+                <th>License Term</th>
+                <td>{{ client.license_term }}</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

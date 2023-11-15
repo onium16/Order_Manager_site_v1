@@ -36,7 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # # ------------------- SERVER END---------------------
 
-# ------------------- LOCAL START ---------------------
+# # ------------------- LOCAL START ---------------------
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=True, cast=bool)
 DB_HOST = config('DB_HOST')
@@ -49,7 +49,7 @@ if not ALLOWED_HOSTS:
 else:
     ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS.split(',') if ':' not in host]  
 
-# ------------------- LOCAL END---------------------
+# # ------------------- LOCAL END---------------------
 
 # Application definition
 
@@ -140,29 +140,19 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-# STATIC_URL = '/static/'
-# # STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-# STATIC_ROOT = os.path.join(BASE_DIR,'static')
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # Это путь к директории со статическими файлами
 ]
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Media files
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STRIPE_PUBLISHABLE_KEY = 'pk_live_51O6dUwFBnjR703bFT6ZxGog6yogi1tEfZe8RZ0RurUVlYYWdbO10N39s9TeKNdnEm2VTeeyxz4a1uCokHh5r2cSv00AQBHvxns'
+
 # COMMANDS FOR CREAT & management *.po files
 # COMMAND FOR CREATE *.PO  python manage.py makemessages -l ru --ignore=venv
 # python manage.py makemessages -a --ignore=venv
@@ -174,3 +164,4 @@ EMAIL_PORT = 587  # Порт вашего SMTP-сервера
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'onicorp.tech@gmail.com'  # Ваш адрес электронной почты
 EMAIL_HOST_PASSWORD = 'lqqc tdwn bylj zsjt'  # Пароль от вашего адреса электронной почты
+DEFAULT_TO_EMAIL = 'onicorp.tech@gmail.com'  # Принимающий адрес электронной почты

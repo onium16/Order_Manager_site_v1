@@ -128,6 +128,7 @@
                                             <span>{{product.currency_type}}</span>
                                             <br>
                                             <br>
+
                                             <button type="button" class="btn btn-warning" style="font-size: 20px; font-weight: bold" onclick="redirectToPayment('{{ product.product_name }}', '{{ product.license_term }}', '{{ product.category_name }}', '{{ product.product_price }}', '{{ product.currency_type }}')">{% trans "buy" %}</button>
                                             <script>
                                                 function redirectToPayment(productName, licenseTerm, categoryName, productPrice, currencyType) {
@@ -157,7 +158,7 @@
                       </button>
                     </div>
                     <div class="modal-body" style="max-width: 650px; font-size: 20px;">
-                        {% trans "Within 24 hours, a sales specialist will contact you and provide you with the product you've purchased. If you have any questions, please contact us at the following email: onicorp.tech@gmail.com" %}
+                        {% trans "Within 24 hours, a sales specialist will contact you to clarify additional information about possible payment methods. After the payment, they will provide you with the purchased product. If you have any questions, please contact us at the following email address: onicorp.tech@gmail.com." %}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" onclick="window.location.href = '{% url 'index' %}'">{% trans 'Close' %}</button>

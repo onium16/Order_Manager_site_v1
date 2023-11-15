@@ -91,13 +91,17 @@ msgstr "Спасибо за запрос!"
 
 #: .\shop\templates\index.html:161
 msgid ""
-"Within 24 hours, a sales specialist will contact you and provide you with "
-"the product you've purchased. If you have any questions, please contact "
-"us at the following email: onicorp.tech@gmail.com"
+"Within 24 hours, a sales specialist will contact you to clarify additional "
+"information about possible payment methods. After the payment, they will "
+"provide you with the purchased product. If you have any questions, please "
+"contact us at the following email address: onicorp.tech@gmail.com."
 msgstr ""
-"В течение 24 часов с Вами свяжется специалист по продажам и предоставит "
-"приобретенный Вами продукт. При возникновении вопросов обращайтесь на e-"
-"mail: onicorp.tech@gmail.com"
+"В течение 24 часов специалист по продажам свяжется с вами, уточнит "
+"дополнительную информации о возможных спосабах оплаты, а также, после "
+"оплаты, предоставит вам приобретенный вами продукт. Если у вас есть "
+"какие-либо вопросы, пожалуйста, свяжитесь с нами по следующему "
+"адресу электронной почты: onicorp.tech@gmail.com."
+
 
 #~ msgid "Return to the homepage"
 #~ msgstr "Вернуться на главную страницу"
