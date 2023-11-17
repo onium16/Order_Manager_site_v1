@@ -50,8 +50,12 @@
                                     </div>
                                 </div>
                             {% endfor %}
-    
-                            <div class="text-center mt-4">
+                            
+                             <!--  add a hidden field with a variable (link to the payment page) to be sent to the POST payment request -->
+                             <input type="hidden" name="stripeApi" value="{{ stripeApi }}">
+                             
+                             <div class="text-center mt-4">
+                                 
                                 <button type="submit" class="btn btn-primary">{% trans 'Submit' %}</button>
                                 <button type="button" class="btn btn-secondary" onclick="window.location.href = '{% url 'index' %}'">{% trans 'Close' %}</button>
                             </div>
@@ -72,7 +76,10 @@
         var productPrice = urlParams.get('productPrice');
         var formattedProductPrice = parseFloat(productPrice.replace(',', '.'));
         var currencyType = urlParams.get('currencyType');
-    
+        var stripeApi = urlParams.get('stripeApi');
+        document.cookie = "stripeApi=" + stripeApi + "; path=/";
+        // console.log(stripeApi);
+
         // Автоматически заполняем форму
         document.getElementById('id_product_name').value = productName;
         document.getElementById('id_license_term').value = licenseTerm;
@@ -94,8 +101,6 @@
         document.getElementById('id_license_term').readOnly = true;
         document.getElementById('id_product_price').readOnly = true;
         document.getElementById('id_currency_type').readOnly = true;
-        
-
     }
 </script>
 

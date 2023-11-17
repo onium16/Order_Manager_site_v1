@@ -35,13 +35,20 @@ def payment(request):
         form = ClientForm()
         return render(request, 'payment.html', {'form': form})
     elif request.method == 'POST':
+        stripe_api_value = request.COOKIES.get('stripeApi', None) # get stripe_api from cookies
+        print(stripe_api_value,  '- stripeApi')
+
         form = ClientForm(request.POST)
         if form.is_valid():
             form.save()
-            
+
+            if stripe_api_value == None:
             # Добавляем параметр success=1 к URL перед редиректом
-            redirect_url = reverse('index') + '?success=1'
-            
+                redirect_url = reverse('index') + '?success=1'
+            # Redirect to Stripe payment service
+            else: 
+                redirect_url = stripe_api_value
+
             return redirect(redirect_url)
         else:
             return render(request, 'payment.html', {'form': form})

@@ -129,10 +129,10 @@
                                             <br>
                                             <br>
 
-                                            <button type="button" class="btn btn-warning" style="font-size: 20px; font-weight: bold" onclick="redirectToPayment('{{ product.product_name }}', '{{ product.license_term }}', '{{ product.category_name }}', '{{ product.product_price }}', '{{ product.currency_type }}')">{% trans "buy" %}</button>
+                                            <button type="button" class="btn btn-warning" style="font-size: 20px; font-weight: bold" onclick="redirectToPayment('{{ product.product_name }}', '{{ product.license_term }}', '{{ product.category_name }}', '{{ product.product_price }}', '{{ product.currency_type }}', '{{ product.stripe_api }}')">{% trans "buy" %}</button>
                                             <script>
-                                                function redirectToPayment(productName, licenseTerm, categoryName, productPrice, currencyType) {
-                                                    var redirectUrl ='{% url "payment" %}?productName=' + encodeURIComponent(productName) +'&licenseTerm=' + encodeURIComponent(licenseTerm) +'&categoryName=' + encodeURIComponent(categoryName) + '&productPrice=' + encodeURIComponent(productPrice) + '&currencyType=' + encodeURIComponent(currencyType);
+                                                function redirectToPayment(productName, licenseTerm, categoryName, productPrice, currencyType, stripeApi) {
+                                                    var redirectUrl ='{% url "payment" %}?productName=' + encodeURIComponent(productName) +'&licenseTerm=' + encodeURIComponent(licenseTerm) +'&categoryName=' + encodeURIComponent(categoryName) + '&productPrice=' + encodeURIComponent(productPrice) + '&currencyType=' + encodeURIComponent(currencyType) + '&stripeApi=' + encodeURIComponent(stripeApi);
                                                     window.location.href = redirectUrl;
                                                 }
                                             </script>
